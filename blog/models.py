@@ -4,8 +4,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# similair to above but models each individaul post on the blog with what information is needed.
-
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -29,23 +27,16 @@ class Post(models.Model):
         return self.likes.count()
 
 
-# specifies what the comments will check for and consist of - automatically set the approval to be false
-# so each comment would have to be approved by a moderator.
-
-
 class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
-    created_on = models.DateTimeField(auto_now_add=True)
     email = models.EmailField()
     body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
 
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-# similair to above but models each individaul post on the blog with what information is needed.
-
