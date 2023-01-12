@@ -1,13 +1,6 @@
 
 # Computer Jargon | Blog Site
 
-Websites used for the content:
-https://www.makeuseof.com/why-are-graphics-cards-so-expensive/
-
-https://www.avast.com/c-amd-vs-nvidia-gpu
-
-https://www.pcgamer.com/2023-games-new-upcoming/
-
 
 Project four
 
