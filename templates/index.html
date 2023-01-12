@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+<!-- For loop to iterate through new posts that get created with added if statements to manage a potential failure -->
         <div class="col-12 mt-3 left">
             <div class="row">
             {% for post in post_list %}
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+   <!-- pagination so that not everything has to fit on one page, hindering readiblity -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
